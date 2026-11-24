@@ -1,4 +1,4 @@
-package clothing;
+package clothing.general;
 
 public enum ClothingType {
     SHIRT,

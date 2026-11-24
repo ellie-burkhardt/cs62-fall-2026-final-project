@@ -1,30 +1,24 @@
-package clothing;
+package clothing.general;
 
-public class Clothing {
+public abstract class Clothing {
     
     // Instance variables 
-    private ClothingType type;
+    // private ClothingType type;
     private Fabric fabric;
     private Weight weight;
     private Color color;
     private Vibe vibe;
 
     // Constructor
-    public Clothing(ClothingType type, Fabric fabric, Weight weight, Color color, Vibe vibe) {
-        this.type = type;
+    public Clothing(Fabric fabric, Weight weight, Color color, Vibe vibe) {
+        // this.type = type;
         this.fabric = fabric;
         this.weight = weight;
         this.color = color;
         this.vibe = vibe;
     }
 
-    /**
-     * Gets clothing type
-     * @return clothing type
-     */
-    public ClothingType getType() {
-        return type;
-    }
+    public abstract String getType();
 
     /**
      * Gets clothing fabric
