@@ -1,6 +1,6 @@
 package clothing;
 
-public enum ClothesType {
+public enum ClothingType {
     SHIRT,
     PANTS,
     SOCKS,
