@@ -15,15 +15,26 @@ public class WeatherLoaderTests {
     @Test 
     public void WeatherLoaderTest(){
         LocalDate date = LocalDate.of(2023, 12, 5);
+        LocalDate date2 = LocalDate.of(2023,12,22);
+        LocalDate date3 = LocalDate.of(2024,3,12);
+        
         WeatherData data = wl.getData(date);
-        if (data == null) {
-            System.out.println("No data found for " + date);
-        } else {
-            System.out.println(data);
-            
-        }
+        WeatherData data2 = wl.getData(date2);
+        WeatherData data3 = wl.getData(date3);
+    
         assertEquals(data.getDate(),date);
-        assertTrue(data.isRainy());
+        assertFalse(data.isRainy());
+        assertEquals(84.0, data.getHighF());
+        assertEquals(50.0, data.getLowF());
+        assertEquals(42.6, data.getHumidityPercent());
+        assertEquals(0.0, data.getPrecipitationMm());
+        assertEquals(34.0, data.getGradientF());
+        assertEquals(2.0, data.getWindMph());
+        assertFalse(data.isWindy());
+
+        assertTrue(data2.isRainy());
+        assertTrue(data3.isWindy());
+
 
     }
 
