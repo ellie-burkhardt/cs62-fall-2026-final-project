@@ -12,12 +12,18 @@ import java.util.zip.DataFormatException;
 
 public class WeatherLoader{
 
+    private final List<WeatherData> readings;
+
+    public WeatherLoader(String filePath) {
+        this.readings = loadFromFile(filePath);   // your existing static method
+    }
+
     /**
      * 
      * @param filePath
      * @return WeatherData parsed into a List of WeatherData objects
      */
-    public static List<WeatherData> loadFromFile(String filePath) {
+    public List<WeatherData> loadFromFile(String filePath) {
         List<WeatherData> readings = new ArrayList<>();
 
 
@@ -60,5 +66,22 @@ public class WeatherLoader{
                   
         }
         return readings;
+
+       
+    }
+
+    /**
+     * 
+     * @param date
+     * @return WeatherData object for the given data
+     */
+    public WeatherData getData(LocalDate date){
+        for (WeatherData w : readings){
+            if (w.getDate().equals(date)){
+                return w;
+            }
+        }
+        return null;
+
     }
 }

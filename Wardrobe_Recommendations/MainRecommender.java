@@ -132,7 +132,7 @@ public class MainRecommender {
 
                     LocalDate date = LocalDate.of(year, mo, day);
 
-                    
+                    Recommender.makeRecommendation(date);
 
                     
                 }
