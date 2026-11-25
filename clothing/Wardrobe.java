@@ -146,7 +146,7 @@ public class Wardrobe {
      * Initiates the 
      * @param args
      */
-    public static void main(String args) {
+    public static void main(String[] args) {
         Wardrobe newWardrobe = new Wardrobe();
         Scanner newScan = new Scanner(System.in);
         Boolean bool1 = true;
@@ -162,14 +162,19 @@ public class Wardrobe {
 
         // manual import
         while (bool1) {
-            System.out.println("Add item? Pick a # from:\n1: Outerwear\n2: Pants\n3: Shirts\n4: Shoes\n5: Socks");
-            int i = newScan.nextInt();
-
+            System.out.println("Add item? Pick a # from:\n 0: Exit \n 1: Outerwear\n2: Pants\n3: Shirts\n4: Shoes\n5: Socks");
+            
             try {
+                
+                int i = newScan.nextInt();
+
 
             switch (i) {
 
-            
+                case 0 -> {
+                    bool1 = false;
+                }
+
                 case 1 -> {
                     OuterwearType type = pickEnum(newScan, OuterwearType.class, "Pick a type:");
                     Fabric fabric = pickEnum(newScan, Fabric.class, "Pick a fabric:");
@@ -211,15 +216,19 @@ public class Wardrobe {
                     Vibe vibe = pickEnum(newScan, Vibe.class, "Pick a vibe:");
                     newWardrobe.addClothing(new Socks(type, fabric, weight, color, vibe));
                 }
+                default -> {
+                    System.out.println("Invalid Choice! Try again.");
+                }
 
             }
             }
             catch (InputMismatchException e) {
                 System.out.println("Please enter a number!");
+                newScan.nextLine();   
 
             }
 
-    
+            newWardrobe.toString();
     }
 
 }
