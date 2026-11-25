@@ -2,8 +2,10 @@ package clothing;
 
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import clothing.general.Clothing;
+import clothing.outerwear.OuterwearType;
 
 public class Wardrobe {
 
@@ -71,6 +73,43 @@ public class Wardrobe {
         }
 
         return total;
+    }
+
+
+    /**
+     * Helper function for adding types using enumeration classes
+     * @param <T>
+     * @param scan
+     * @param enumClass
+     * @param prompt
+     * @return
+     */
+    private static <T extends Enum<T>> T pickEnum(Scanner scan, Class<T> enumClass, String prompt) {
+        T[] options = enumClass.getEnumConstants(); // from the Class documentation
+        while (true) {
+            System.out.println(prompt);
+            for (int k = 0; k < options.length; k++) {
+                System.out.println((k + 1) + ": " + options[k]);
+            }
+            int choice = scan.nextInt();
+            if (choice >= 1 && choice <= options.length) {
+                return options[choice - 1];
+            }
+            System.out.println("Invalid choice, try again.");
+        }
+    }
+
+
+    /**
+     * Initiates the 
+     * @param args
+     */
+    public static void main(String args) {
+        Wardrobe newWardrobe = new Wardrobe();
+        Scanner newScan = new Scanner(System.in);
+
+        
+
     }
 
 }
