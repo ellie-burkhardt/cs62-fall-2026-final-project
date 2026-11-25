@@ -5,6 +5,8 @@ import clothing.general.Color;
 import clothing.general.Fabric;
 import clothing.general.Vibe;
 import clothing.general.Weight;
+import clothing.pants.Pants;
+import clothing.pants.PantsType;
 
 public class Socks extends Clothing{
     // Instance variables 
@@ -28,4 +30,19 @@ public class Socks extends Clothing{
     public String getType() {
         return "Sock";
     }
+     public static void main(String[] args){
+        Fabric fabric = Fabric.COTTON;
+        Vibe vibe = Vibe.FORMAL;
+        Weight weight = Weight.HEAVYWEIGHT;
+        Color color = Color.BLUE;
+    
+        Socks newpiece = new Socks(SocksType.COMPRESSION,fabric,weight,color,vibe);
+        System.out.println(newpiece.getType());
+        System.out.println(newpiece.getSocksType());
+        System.out.println(newpiece.getColor());
+        System.out.println(newpiece.getFabric());
+        System.out.println(newpiece.getVibe());
+        System.out.println(newpiece.getWeight());
+
+}
 }

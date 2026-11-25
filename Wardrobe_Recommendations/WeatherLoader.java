@@ -61,7 +61,7 @@ public class WeatherLoader{
     
                 }
             catch (NumberFormatException | NullPointerException | DateTimeException e) { // what kind of errors do you get here
-                System.out.println("Skipping Line: " + line);
+                
             }
                   
         }
@@ -84,4 +84,8 @@ public class WeatherLoader{
         return null;
 
     }
+
+   
 }
+
+
