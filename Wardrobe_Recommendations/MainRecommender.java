@@ -50,6 +50,7 @@ public class MainRecommender {
         Wardrobe newWardrobe = new Wardrobe();
         Scanner newScan = new Scanner(System.in);
         Boolean bool1 = true;
+        Recommender recommender = new Recommender();
         
         // System.out.println("Choose from: \n 1: Manual Addition \n 2: Import from text file, write each item as");
         // int x = newScan.nextInt();
@@ -147,7 +148,7 @@ public class MainRecommender {
 
                     WeatherLoader wl = new WeatherLoader("defualt path");
 
-                    Recommender.makeRecommendation(date, wl, v, newWardrobe);
+                    recommender.makeRecommendation(date, wl, v, newWardrobe);
 
                     
                 }
