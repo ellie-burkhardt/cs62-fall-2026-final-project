@@ -131,10 +131,23 @@ public class MainRecommender {
                     int day = newScan.nextInt();
 
                     LocalDate date = LocalDate.of(year, mo, day);
-                    //
+                    
+                    System.out.println("What is the vibe?: \n 1: Casual \n 2: Formal \n 3: Sporty \n 4: Business \n 5: Streetwear");
+                    int vibe = newScan.nextInt();
+                    Vibe v;
+
+                    switch (vibe) {
+                        case 1 -> v = Vibe.CASUAL;
+                        case 2 -> v = Vibe.FORMAL;
+                        case 3 -> v = Vibe.SPORTY;
+                        case 4 -> v = Vibe.BUSINESS;
+                        case 5 -> v = Vibe.STREETWEAR;
+                        default -> v = Vibe.CASUAL; // arbitrary default
+                    }
+
                     WeatherLoader wl = new WeatherLoader("defualt path");
 
-                    Recommender.makeRecommendation(date, wl);
+                    Recommender.makeRecommendation(date, wl, v, newWardrobe);
 
                     
                 }
