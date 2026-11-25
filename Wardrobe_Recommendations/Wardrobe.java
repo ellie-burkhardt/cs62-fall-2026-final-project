@@ -1,9 +1,14 @@
-package clothing;
+package Wardrobe_Recommendations;
 
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import clothing.general.Clothing;
+import java.lang.StringBuilder;
+
+
 
 public class Wardrobe {
 
@@ -72,5 +77,33 @@ public class Wardrobe {
 
         return total;
     }
+
+    /**    
+     * 
+     * toString method that prints out all clothes separated by category
+     */
+    @Override 
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        String newline = System.lineSeparator();
+        sb.append("Total number of clothing items :" + this.getTotalClothing() + "\n");
+        
+        for (HashMap.Entry<String, ArrayList<Clothing>> entry : clothes.entrySet()) {
+            sb.append(entry.getKey()).append(":").append(newline);
+
+            for (Clothing item : entry.getValue()) {
+                sb.append("- ").append(item).append(newline);
+            }
+        }
+
+        return sb.toString();
+    
+    }
+
+            
+
+
+   
+
 
 }
