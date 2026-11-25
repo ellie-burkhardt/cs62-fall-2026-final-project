@@ -1,5 +1,8 @@
 package clothing.general;
 
+import clothing.pants.Pants;
+import clothing.pants.PantsType;
+
 public abstract class Clothing {
     
     // Instance variables 
@@ -51,5 +54,7 @@ public abstract class Clothing {
     public Vibe getVibe() {
         return vibe;
     }
+
+
 
 }

@@ -5,6 +5,8 @@ import clothing.general.Color;
 import clothing.general.Fabric;
 import clothing.general.Vibe;
 import clothing.general.Weight;
+import clothing.outerwear.Outerwear;
+import clothing.outerwear.OuterwearType;
 
 public class Pants extends Clothing{
     
@@ -30,4 +32,20 @@ public class Pants extends Clothing{
         return "Pants";
     }
 
+    public static void main(String[] args){
+        Fabric fabric = Fabric.COTTON;
+        Vibe vibe = Vibe.FORMAL;
+        Weight weight = Weight.HEAVYWEIGHT;
+        Color color = Color.BLUE;
+    
+        Pants newpiece = new Pants(PantsType.KHAKIS,fabric,weight,color,vibe);
+        System.out.println(newpiece.getType());
+        System.out.println(newpiece.getPantsType());
+        System.out.println(newpiece.getColor());
+        System.out.println(newpiece.getFabric());
+        System.out.println(newpiece.getVibe());
+        System.out.println(newpiece.getWeight());
+
+}
+    
 }

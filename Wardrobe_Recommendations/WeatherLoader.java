@@ -61,7 +61,7 @@ public class WeatherLoader{
     
                 }
             catch (NumberFormatException | NullPointerException | DateTimeException e) { // what kind of errors do you get here
-                System.out.println("Skipping Line: " + line);
+                
             }
                   
         }
@@ -83,5 +83,18 @@ public class WeatherLoader{
         }
         return null;
 
+    }
+
+    public static void main(String[] args){
+        WeatherLoader wl = new WeatherLoader("/Users/madeleinepham/Desktop/claremont_weather_data_copy.txt" );
+
+        LocalDate date = LocalDate.of(2023, 12, 5);
+
+        WeatherData data = wl.getData(date);
+        if (data == null) {
+            System.out.println("No data found for " + date);
+        } else {
+            System.out.println(data);
+}
     }
 }

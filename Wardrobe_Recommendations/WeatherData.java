@@ -75,4 +75,19 @@ public class WeatherData {
          return windMph >= 15; 
         }
 
+    @Override 
+    public String toString(){
+        return "WeatherData{" +
+        "date=" + date +
+        ", highF: " + highF +
+        ", lowF: " + lowF +
+        ", humidityPercent: " + humidityPercent +
+        ", precipitationMm: " + precipitationMm +
+        ", gradientF: " + gradientF +
+        ", windMph: " + windMph +
+        '}';
+    }
+
 }
+
+
