@@ -131,8 +131,10 @@ public class MainRecommender {
                     int day = newScan.nextInt();
 
                     LocalDate date = LocalDate.of(year, mo, day);
+                    //
+                    WeatherLoader wl = new WeatherLoader("defualt path");
 
-                    Recommender.makeRecommendation(date);
+                    Recommender.makeRecommendation(date, wl);
 
                     
                 }
