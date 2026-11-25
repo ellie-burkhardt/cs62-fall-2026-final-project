@@ -1,3 +1,15 @@
+'''
+Please note that a significant portion of this code was adapted from a previous 
+project I wrote. This main version code can be accessed at this GitHub repo: 
+
+https://github.com/ellie-burkhardt/surp2026-final-version
+
+However, there are other version of the extraction pipeline that are not uploaded 
+to GitHub. 
+
+    -- Ellie 
+'''
+
 
 # Imports
 import os 
