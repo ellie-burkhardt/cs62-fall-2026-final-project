@@ -6,21 +6,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import clothing.general.Clothing;
-import clothing.general.Color;
-import clothing.general.Fabric;
-import clothing.general.Vibe;
-import clothing.general.Weight;
-import clothing.outerwear.Outerwear;
-import clothing.outerwear.OuterwearType;
-import clothing.pants.Pants;
-import clothing.pants.PantsType;
-import clothing.pants.Pants;
-import clothing.shirts.Shirt;
-import clothing.shirts.ShirtType;
-import clothing.shoes.Shoes;
-import clothing.shoes.ShoeType;
-import clothing.socks.Socks;
-import clothing.socks.SocksType;
 import java.lang.StringBuilder;
 
 

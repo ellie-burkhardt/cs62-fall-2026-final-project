@@ -7,20 +7,19 @@ import clothing.outerwear.Outerwear;
 import clothing.outerwear.OuterwearType;
 import clothing.pants.Pants;
 import clothing.pants.PantsType;
-import clothing.pants.Pants;
 import clothing.shirts.Shirt;
 import clothing.shirts.ShirtType;
 import clothing.shoes.Shoes;
 import clothing.shoes.ShoeType;
 import clothing.socks.Socks;
 import clothing.socks.SocksType;
-import java.lang.StringBuilder;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.time.LocalDate;
 
 
 public class MainRecommender {
+
     
 
      /**
@@ -134,6 +133,7 @@ public class MainRecommender {
                     LocalDate date = LocalDate.of(year, mo, day);
 
                     
+
                     
                 }
 
