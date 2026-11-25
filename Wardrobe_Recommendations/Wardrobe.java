@@ -1,4 +1,4 @@
-package clothing;
+package Wardrobe_Recommendations;
 
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -149,7 +149,8 @@ public class Wardrobe {
     public static void main(String[] args) {
         Wardrobe newWardrobe = new Wardrobe();
         Scanner newScan = new Scanner(System.in);
-        Boolean bool1 = true;
+        Boolean addClothes = true;
+        Boolean makeRecomendation = false;
         
         // System.out.println("Choose from: \n 1: Manual Addition \n 2: Import from text file, write each item as");
         // int x = newScan.nextInt();
@@ -161,8 +162,8 @@ public class Wardrobe {
 
 
         // manual import
-        while (bool1) {
-            System.out.println("Add item? Pick a # from:\n 0: Exit \n 1: Outerwear\n2: Pants\n3: Shirts\n4: Shoes\n5: Socks");
+        while (addClothes) {
+            System.out.println("Add item? Pick a # from: \n 0: Exit \n 1: Outerwear \n2: Pants\n3: Shirts\n4: Shoes\n5: Socks" );
             
             try {
                 
@@ -172,7 +173,7 @@ public class Wardrobe {
             switch (i) {
 
                 case 0 -> {
-                    bool1 = false;
+                    addClothes = false;
                 }
 
                 case 1 -> {
@@ -228,8 +229,14 @@ public class Wardrobe {
 
             }
 
-            newWardrobe.toString();
+                  
     }
+        newWardrobe.toString(); 
+
+        System.out.println("What is the date today?");
+        int date = newScan.nextInt();
+
+        
 
 }
 }
