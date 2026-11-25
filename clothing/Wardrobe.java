@@ -1,11 +1,29 @@
 package clothing;
 
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import clothing.general.Clothing;
+import clothing.general.Color;
+import clothing.general.Fabric;
+import clothing.general.Vibe;
+import clothing.general.Weight;
+import clothing.outerwear.Outerwear;
 import clothing.outerwear.OuterwearType;
+import clothing.pants.Pants;
+import clothing.pants.PantsType;
+import clothing.pants.Pants;
+import clothing.shirts.Shirt;
+import clothing.shirts.ShirtType;
+import clothing.shoes.Shoes;
+import clothing.shoes.ShoeType;
+import clothing.socks.Socks;
+import clothing.socks.SocksType;
+import java.lang.StringBuilder;
+
+
 
 public class Wardrobe {
 
@@ -75,6 +93,30 @@ public class Wardrobe {
         return total;
     }
 
+    /**    
+     * 
+     * toString method that prints out all clothes separated by category
+     */
+    @Override 
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        String newline = System.lineSeparator();
+        sb.append("Total number of clothing items :" + this.getTotalClothing() + "\n");
+        
+        for (HashMap.Entry<String, ArrayList<Clothing>> entry : clothes.entrySet()) {
+            sb.append(entry.getKey()).append(":").append(newline);
+
+            for (Clothing item : entry.getValue()) {
+                sb.append("- ").append(item).append(newline);
+            }
+        }
+
+        return sb.toString();
+    
+    }
+
+            
+
 
     /**
      * Helper function for adding types using enumeration classes
@@ -107,9 +149,78 @@ public class Wardrobe {
     public static void main(String args) {
         Wardrobe newWardrobe = new Wardrobe();
         Scanner newScan = new Scanner(System.in);
-
+        Boolean bool1 = true;
         
+        // System.out.println("Choose from: \n 1: Manual Addition \n 2: Import from text file, write each item as");
+        // int x = newScan.nextInt();
+        // if (x == 2) {
+        //     bool1 = false;
+        // }
+        
+        // // importing from a md file
 
+
+        // manual import
+        while (bool1) {
+            System.out.println("Add item? Pick a # from:\n1: Outerwear\n2: Pants\n3: Shirts\n4: Shoes\n5: Socks");
+            int i = newScan.nextInt();
+
+            try {
+
+            switch (i) {
+
+            
+                case 1 -> {
+                    OuterwearType type = pickEnum(newScan, OuterwearType.class, "Pick a type:");
+                    Fabric fabric = pickEnum(newScan, Fabric.class, "Pick a fabric:");
+                    Weight weight = pickEnum(newScan, Weight.class, "Pick a weight:");
+                    Color color = pickEnum(newScan, Color.class, "Pick a color:");
+                    Vibe vibe = pickEnum(newScan, Vibe.class, "Pick a vibe:");
+                    newWardrobe.addClothing(new Outerwear(type, fabric, weight, color, vibe));
+                }
+
+                case 2 -> {
+                    PantsType type = pickEnum(newScan, PantsType.class, "Pick a type:");
+                    Fabric fabric = pickEnum(newScan, Fabric.class, "Pick a fabric:");
+                    Weight weight = pickEnum(newScan, Weight.class, "Pick a weight:");
+                    Color color = pickEnum(newScan, Color.class, "Pick a color:");
+                    Vibe vibe = pickEnum(newScan, Vibe.class, "Pick a vibe:");
+                    newWardrobe.addClothing(new Pants(type, fabric, weight, color, vibe));
+                }
+                case 3 -> {
+                    ShirtType type = pickEnum(newScan, ShirtType.class, "Pick a type:");
+                    Fabric fabric = pickEnum(newScan, Fabric.class, "Pick a fabric:");
+                    Weight weight = pickEnum(newScan, Weight.class, "Pick a weight:");
+                    Color color = pickEnum(newScan, Color.class, "Pick a color:");
+                    Vibe vibe = pickEnum(newScan, Vibe.class, "Pick a vibe:");
+                    newWardrobe.addClothing(new Shirt(type, fabric, weight, color, vibe));
+                }
+                case 4 -> {
+                    ShoeType type = pickEnum(newScan, ShoeType.class, "Pick a type:");
+                    Fabric fabric = pickEnum(newScan, Fabric.class, "Pick a fabric:");
+                    Weight weight = pickEnum(newScan, Weight.class, "Pick a weight:");
+                    Color color = pickEnum(newScan, Color.class, "Pick a color:");
+                    Vibe vibe = pickEnum(newScan, Vibe.class, "Pick a vibe:");
+                    newWardrobe.addClothing(new Shoes(type, fabric, weight, color, vibe));
+                }
+                case 5 -> {
+                    SocksType type = pickEnum(newScan, SocksType.class, "Pick a type:");
+                    Fabric fabric = pickEnum(newScan, Fabric.class, "Pick a fabric:");
+                    Weight weight = pickEnum(newScan, Weight.class, "Pick a weight:");
+                    Color color = pickEnum(newScan, Color.class, "Pick a color:");
+                    Vibe vibe = pickEnum(newScan, Vibe.class, "Pick a vibe:");
+                    newWardrobe.addClothing(new Socks(type, fabric, weight, color, vibe));
+                }
+
+            }
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Please enter a number!");
+
+            }
+
+    
     }
 
+}
 }
